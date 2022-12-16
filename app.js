@@ -1,6 +1,8 @@
 const express=require('express');
 const connectDB=require('./connection/db');
 const router=require('./routes/route');
+const notFound=require('./middlewares/notfound');
+const errorHandler=require('./middlewares/Error-handler');
 
 require('dotenv').config();
 
@@ -9,6 +11,8 @@ const app=express();
 //Middlewares:
 app.use(express.json());
 app.use('/api/v1',router);
+app.use(notFound);
+app.use(errorHandler);
 
 const start=async()=>{
    try{
