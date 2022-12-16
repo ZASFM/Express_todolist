@@ -11,6 +11,7 @@ const app=express();
 //Middlewares:
 app.use(express.json());
 app.use('/api/v1',router);
+app.use(express.static('./public'));
 app.use(notFound);
 app.use(errorHandler);
 
