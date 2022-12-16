@@ -9,7 +9,6 @@ const app=express();
 //Middlewares:
 app.use(express.json());
 app.use('/api/v1',router);
-app.use();
 
 const start=async()=>{
    try{
