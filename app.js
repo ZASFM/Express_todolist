@@ -1,5 +1,6 @@
 const express=require('express');
 const connectDB=require('./connection/db');
+const router=require('./routes/route');
 
 require('dotenv').config();
 
@@ -7,10 +8,8 @@ const app=express();
 
 //Middlewares:
 app.use(express.json());
-
-app.get('/',(req,res)=>{
-   res.status(200).send('Home');
-})
+app.use('/api/v1',router);
+app.use();
 
 const start=async()=>{
    try{
